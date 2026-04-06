@@ -2,6 +2,7 @@
 using CICD.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CICD.Controllers
 {
@@ -23,6 +24,7 @@ namespace CICD.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Product product)
         {
+            this is not valid csharp code!!!
             _db.Products.Add(product);
             await _db.SaveChangesAsync();
             return CreatedAtAction(nameof(GetAll), product);
