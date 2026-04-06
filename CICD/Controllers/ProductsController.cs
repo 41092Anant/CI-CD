@@ -23,8 +23,7 @@ namespace CICD.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Create(Product product)
-        {
-            this is not valid csharp code!!!
+        {            
             _db.Products.Add(product);
             await _db.SaveChangesAsync();
             return CreatedAtAction(nameof(GetAll), product);
