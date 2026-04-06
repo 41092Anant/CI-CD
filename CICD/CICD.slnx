@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CICD.csproj" />
+  <Project Path="CICD.Tests/CICD.Tests.csproj" />
+</Solution>
