@@ -23,7 +23,7 @@ public class ProductsTest
         await db.SaveChangesAsync();
         var result = await db.Products.ToListAsync();
         Assert.Single(result);
-        Assert.Equal("Wrong Product Name", result[0].Name);
+        Assert.Equal("Test Product", result[0].Name);
     }
 
 }
