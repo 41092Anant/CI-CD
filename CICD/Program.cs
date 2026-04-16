@@ -12,12 +12,18 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Enable Swagger always (not just in Development)
+// Auto-migrate database on startup
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
+
+// Enable Swagger always
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+// Removed UseHttpsRedirection — causes issues on Render
 app.UseAuthorization();
 app.MapControllers();
-
 app.Run();
