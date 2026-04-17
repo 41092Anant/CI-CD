@@ -38,5 +38,8 @@ namespace CICD.Controllers
             await _db.SaveChangesAsync();
             return NoContent();
         }
+
+        [HttpGet("health")]
+        public IActionResult Health() => Ok("API is running!");
     }
 }
