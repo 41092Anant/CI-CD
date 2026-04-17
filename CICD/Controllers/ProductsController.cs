@@ -41,5 +41,8 @@ namespace CICD.Controllers
 
         [HttpGet("health")]
         public IActionResult Health() => Ok("API is running!");
+
+        [HttpGet("Verivication")]
+        public IActionResult Verivication() => Ok("Verivication is running!");
     }
 }
